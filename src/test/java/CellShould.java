@@ -36,4 +36,13 @@ public class CellShould {
 
         assertFalse(cell.isAlive());
     }
+
+    @Test
+    public void go_back_to_live_when_is_reproduction() {
+        Cell cell = new Cell(State.DEAD);
+
+        cell.updateStatus(new Neighbours(3));
+
+        assertTrue(cell.isAlive());
+    }
 }
