@@ -27,4 +27,13 @@ public class CellShould {
 
         assertFalse(cell.isAlive());
     }
+
+    @Test
+    public void die_when_is_overpopulation() {
+        Cell cell = new Cell(State.ALIVE);
+
+        cell.updateStatus(new Neighbours(4));
+
+        assertFalse(cell.isAlive());
+    }
 }

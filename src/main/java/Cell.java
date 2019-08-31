@@ -14,6 +14,9 @@ public class Cell {
             if(isUnderpopulation(neighbours)){
                 this.state = State.DEAD;
             }
+            if(neighbours.getValue() > 3){
+                this.state = State.DEAD;
+            }
         }
     }
 
