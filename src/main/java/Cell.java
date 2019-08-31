@@ -10,8 +10,14 @@ public class Cell {
     }
 
     public void updateStatus(Neighbours neighbours) {
-        if(neighbours.getValue() < 2){ // underpopulation
-            this.state = State.DEAD;
+        if(state == State.ALIVE){
+            if(isUnderpopulation(neighbours)){
+                this.state = State.DEAD;
+            }
         }
+    }
+
+    private boolean isUnderpopulation(Neighbours neighbours) {
+        return neighbours.getValue() < 2;
     }
 }
