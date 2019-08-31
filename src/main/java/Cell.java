@@ -14,10 +14,14 @@ public class Cell {
             if(isUnderpopulation(neighbours)){
                 this.state = State.DEAD;
             }
-            if(neighbours.getValue() > 3){
+            if(isOverpopulation(neighbours)){
                 this.state = State.DEAD;
             }
         }
+    }
+
+    private boolean isOverpopulation(Neighbours neighbours) {
+        return neighbours.getValue() > 3;
     }
 
     private boolean isUnderpopulation(Neighbours neighbours) {
