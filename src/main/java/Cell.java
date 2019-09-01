@@ -5,6 +5,14 @@ public class Cell {
         this.state = state;
     }
 
+    public static Cell dead() {
+        return new Cell(State.DEAD);
+    }
+
+    public static Cell alive() {
+        return new Cell(State.ALIVE);
+    }
+
     public boolean isAlive() {
         return state == State.ALIVE;
     }
